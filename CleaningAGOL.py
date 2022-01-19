@@ -3,7 +3,9 @@ from arcgis.mapping import WebMap
 import pandas as pd
 
 from getpass import getpass
-portal_url = "https://arcgis.com"
+
+print("The default portal to search all of AGOL is 'https://arcgis.com'. If you want to search only your organization's portal it might look something more like 'https://utahdnr.maps.arcgis.com/'.")
+portal_url = input("Enter portal to search: ")
 username = input("Enter AGOL username: ")
 print("Enter password: ")
 password = getpass() # this prompts the user to input a password without echoing, better than hard-coding and storing in the python file
