@@ -3,7 +3,7 @@ from arcgis.mapping import WebMap
 
 from getpass import getpass
 portal_url = "https://arcgis.com"
-username = 'OGMGIS_utahDNR'
+username = input("Enter AGOL username: ")
 password = getpass() # this prompts the user to input a password without echoing, better than hard-coding and storing in the python file
 gis = GIS(portal_url, username, password)
 
@@ -57,4 +57,6 @@ df = pd.DataFrame(unusedList)
 
 df.columns = ["Name", "AGOL Link"]
 
-df.to_csv(r"C:\Users\cschooley\Documents\Work\Personal\AGOLOrganization\notinmaps122021.csv", index = False)
+saveFolder = input("Enter file path for csv: ")
+
+df.to_csv(saveFolder, index = False)
